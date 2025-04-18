@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shagai togloh</title>
+</head>
+<body>
+    <img src="1.png" alt="" width="200">
+    <img src="2.png" alt="" width="200">
+    <img src="3.png" alt="" width="200">
+    <img src="4.png" alt="" width="200">
+    <button onclick="change()">Change button</button>
+    <br><br>
+    <img id="mori1" src="horse.webp" alt="" width="200">
+
+    <script>
+        let onoo = 0
+
+        function change(){
+            let randomTal = Math.ceil(Math.random() * 4) // 1-4 hurtel sanaandgui too gargana
+            let randomTal2 = Math.ceil(Math.random() * 4) // 1-4 hurtel sanaandgui too gargana
+            let randomTal3 = Math.ceil(Math.random() * 4) // 1-4 hurtel sanaandgui too gargana
+            let randomTal4 = Math.ceil(Math.random() * 4) // 1-4 hurtel sanaandgui too gargana
+
+            let shagainuud = document.getElementsByTagName('img');
+            shagainuud[0].src = randomTal + ".png"; // 1-r shagain zurgiig sanaandgui toond taaruulj solino
+            shagainuud[1].src = randomTal2 + ".png";
+            shagainuud[2].src = randomTal3 + ".png";
+            shagainuud[3].src = randomTal4 + ".png";
+
+            let mori1 = document.getElementById('mori1');
+            if(randomTal == 4 ){
+                onoo++
+                if(onoo > 5){
+                    alert('bariand orloo');
+                    onoo = 0;
+                    mori1.style.marginLeft = 0;
+                }
+                mori1.style.marginLeft = onoo * 100 + "px";
+            }
+        }
+    </script>
+</body>
+</html>
